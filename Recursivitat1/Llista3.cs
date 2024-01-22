@@ -8,9 +8,13 @@ namespace A6
 {
     public class Llista3
     {
-        public static int TresDedosEnCadaMano(int casos, int num)
+        public static string TresDedosEnCadaMano(int num)
         {
-
+            if (num == 0)
+                return "";
+            else
+                return TresDedosEnCadaMano(num / 6) + (num % 6).ToString();
         }
+
     }
 }

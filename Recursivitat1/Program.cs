@@ -166,6 +166,32 @@ public class Program
                 break;
         }
     }
+    private static void MostrarMenuLlista3(string opcioLlista3)
+    {
+        switch (opcioLlista3)
+        {
+            case "1":
+                Console.Clear();
+                Console.WriteLine("Entra numero de casos: ");
+                int nCasos = Convert.ToInt32(Console.ReadLine());
+                List<string> resultats = new List<string>();
+                while (nCasos > 0)
+                {
+                    Console.WriteLine("Entra valor");
+                    int valor = Convert.ToInt32(Console.ReadLine());
+                    string num = Llista3.TresDedosEnCadaMano(valor);
+                    resultats.Add(num);
+                    nCasos--;
+                }
+                Console.WriteLine("Resultat:");
+                foreach (string res in resultats)
+                {
+                    Console.WriteLine(res);
+                }
+                break;
+        }
+        }
+
     public static void MostrarMenu()
     {
         string opcio = "";
@@ -213,6 +239,18 @@ public class Program
                     Console.WriteLine("0) Sortir");
                     string opcioMenuLlista2 = Console.ReadLine();
                     MostrarMenuLlista2(opcioMenuLlista2);
+                    Console.WriteLine();
+                    break;
+                case "3":
+                    Console.Clear();
+                    Console.WriteLine("____________");
+                    Console.WriteLine("\n LLISTA 3");
+                    Console.WriteLine("____________");
+                    Console.WriteLine("1) Tres dedos en cada mano");
+                    Console.WriteLine("m) Mostrar menú");
+                    Console.WriteLine("0) Sortir");
+                    string opcioMenuLlista3 = Console.ReadLine();
+                    MostrarMenuLlista3(opcioMenuLlista3);
                     Console.WriteLine();
                     break;
                 case "m":
